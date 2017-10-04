@@ -1,0 +1,882 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://www.tylertech.com/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://www.tylertech.com/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://www.tylertech.com/">
+      <s:element name="OdysseyTxnExecution">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="odysseyTransactionXML" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="siteKey" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="OdysseyTxnExecutionResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="OdysseyTxnExecutionResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="OdysseyTxnExecutionRollback">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="odysseyTransactionXML" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="siteKey" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="OdysseyTxnExecutionRollbackResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="OdysseyTxnExecutionRollbackResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="OdysseyTxnExecutionAllowFaults">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="odysseyTransactionXML" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="siteKey" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="OdysseyTxnExecutionAllowFaultsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="OdysseyTxnExecutionAllowFaultsResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="OdysseyTxnExecutionRollbackAllowFaults">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="odysseyTransactionXML" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="siteKey" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="OdysseyTxnExecutionRollbackAllowFaultsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="OdysseyTxnExecutionRollbackAllowFaultsResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="OdysseyTxnExecutionWithRetry">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="odysseyTransactionXML" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="siteKey" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="retryCount" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="OdysseyTxnExecutionWithRetryResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="OdysseyTxnExecutionWithRetryResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="OdysseyTxnExecutionRollbackWithRetry">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="odysseyTransactionXML" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="siteKey" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="retryCount" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="OdysseyTxnExecutionRollbackWithRetryResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="OdysseyTxnExecutionRollbackWithRetryResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="OdysseyTxnExecutionWithRetryAllowFaults">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="odysseyTransactionXML" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="siteKey" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="retryCount" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="OdysseyTxnExecutionWithRetryAllowFaultsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="OdysseyTxnExecutionWithRetryAllowFaultsResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="OdysseyTxnExecutionRollbackWithRetryAllowFaults">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="odysseyTransactionXML" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="siteKey" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="retryCount" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="OdysseyTxnExecutionRollbackWithRetryAllowFaultsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="OdysseyTxnExecutionRollbackWithRetryAllowFaultsResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="OdysseyMsgExecution">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="odysseyMessageXML" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="siteKey" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="OdysseyMsgExecutionResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="OdysseyMsgExecutionResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="OdysseyMsgExecutionAllowFaults">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="odysseyMessageXML" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="siteKey" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="OdysseyMsgExecutionAllowFaultsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="OdysseyMsgExecutionAllowFaultsResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="string" nillable="true" type="s:string" />
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="OdysseyTxnExecutionSoapIn">
+    <wsdl:part name="parameters" element="tns:OdysseyTxnExecution" />
+  </wsdl:message>
+  <wsdl:message name="OdysseyTxnExecutionSoapOut">
+    <wsdl:part name="parameters" element="tns:OdysseyTxnExecutionResponse" />
+  </wsdl:message>
+  <wsdl:message name="OdysseyTxnExecutionRollbackSoapIn">
+    <wsdl:part name="parameters" element="tns:OdysseyTxnExecutionRollback" />
+  </wsdl:message>
+  <wsdl:message name="OdysseyTxnExecutionRollbackSoapOut">
+    <wsdl:part name="parameters" element="tns:OdysseyTxnExecutionRollbackResponse" />
+  </wsdl:message>
+  <wsdl:message name="OdysseyTxnExecutionAllowFaultsSoapIn">
+    <wsdl:part name="parameters" element="tns:OdysseyTxnExecutionAllowFaults" />
+  </wsdl:message>
+  <wsdl:message name="OdysseyTxnExecutionAllowFaultsSoapOut">
+    <wsdl:part name="parameters" element="tns:OdysseyTxnExecutionAllowFaultsResponse" />
+  </wsdl:message>
+  <wsdl:message name="OdysseyTxnExecutionRollbackAllowFaultsSoapIn">
+    <wsdl:part name="parameters" element="tns:OdysseyTxnExecutionRollbackAllowFaults" />
+  </wsdl:message>
+  <wsdl:message name="OdysseyTxnExecutionRollbackAllowFaultsSoapOut">
+    <wsdl:part name="parameters" element="tns:OdysseyTxnExecutionRollbackAllowFaultsResponse" />
+  </wsdl:message>
+  <wsdl:message name="OdysseyTxnExecutionWithRetrySoapIn">
+    <wsdl:part name="parameters" element="tns:OdysseyTxnExecutionWithRetry" />
+  </wsdl:message>
+  <wsdl:message name="OdysseyTxnExecutionWithRetrySoapOut">
+    <wsdl:part name="parameters" element="tns:OdysseyTxnExecutionWithRetryResponse" />
+  </wsdl:message>
+  <wsdl:message name="OdysseyTxnExecutionRollbackWithRetrySoapIn">
+    <wsdl:part name="parameters" element="tns:OdysseyTxnExecutionRollbackWithRetry" />
+  </wsdl:message>
+  <wsdl:message name="OdysseyTxnExecutionRollbackWithRetrySoapOut">
+    <wsdl:part name="parameters" element="tns:OdysseyTxnExecutionRollbackWithRetryResponse" />
+  </wsdl:message>
+  <wsdl:message name="OdysseyTxnExecutionWithRetryAllowFaultsSoapIn">
+    <wsdl:part name="parameters" element="tns:OdysseyTxnExecutionWithRetryAllowFaults" />
+  </wsdl:message>
+  <wsdl:message name="OdysseyTxnExecutionWithRetryAllowFaultsSoapOut">
+    <wsdl:part name="parameters" element="tns:OdysseyTxnExecutionWithRetryAllowFaultsResponse" />
+  </wsdl:message>
+  <wsdl:message name="OdysseyTxnExecutionRollbackWithRetryAllowFaultsSoapIn">
+    <wsdl:part name="parameters" element="tns:OdysseyTxnExecutionRollbackWithRetryAllowFaults" />
+  </wsdl:message>
+  <wsdl:message name="OdysseyTxnExecutionRollbackWithRetryAllowFaultsSoapOut">
+    <wsdl:part name="parameters" element="tns:OdysseyTxnExecutionRollbackWithRetryAllowFaultsResponse" />
+  </wsdl:message>
+  <wsdl:message name="OdysseyMsgExecutionSoapIn">
+    <wsdl:part name="parameters" element="tns:OdysseyMsgExecution" />
+  </wsdl:message>
+  <wsdl:message name="OdysseyMsgExecutionSoapOut">
+    <wsdl:part name="parameters" element="tns:OdysseyMsgExecutionResponse" />
+  </wsdl:message>
+  <wsdl:message name="OdysseyMsgExecutionAllowFaultsSoapIn">
+    <wsdl:part name="parameters" element="tns:OdysseyMsgExecutionAllowFaults" />
+  </wsdl:message>
+  <wsdl:message name="OdysseyMsgExecutionAllowFaultsSoapOut">
+    <wsdl:part name="parameters" element="tns:OdysseyMsgExecutionAllowFaultsResponse" />
+  </wsdl:message>
+  <wsdl:message name="OdysseyTxnExecutionHttpGetIn">
+    <wsdl:part name="odysseyTransactionXML" type="s:string" />
+    <wsdl:part name="siteKey" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="OdysseyTxnExecutionHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="OdysseyTxnExecutionRollbackHttpGetIn">
+    <wsdl:part name="odysseyTransactionXML" type="s:string" />
+    <wsdl:part name="siteKey" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="OdysseyTxnExecutionRollbackHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="OdysseyTxnExecutionAllowFaultsHttpGetIn">
+    <wsdl:part name="odysseyTransactionXML" type="s:string" />
+    <wsdl:part name="siteKey" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="OdysseyTxnExecutionAllowFaultsHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="OdysseyTxnExecutionRollbackAllowFaultsHttpGetIn">
+    <wsdl:part name="odysseyTransactionXML" type="s:string" />
+    <wsdl:part name="siteKey" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="OdysseyTxnExecutionRollbackAllowFaultsHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="OdysseyTxnExecutionWithRetryHttpGetIn">
+    <wsdl:part name="odysseyTransactionXML" type="s:string" />
+    <wsdl:part name="siteKey" type="s:string" />
+    <wsdl:part name="retryCount" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="OdysseyTxnExecutionWithRetryHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="OdysseyTxnExecutionRollbackWithRetryHttpGetIn">
+    <wsdl:part name="odysseyTransactionXML" type="s:string" />
+    <wsdl:part name="siteKey" type="s:string" />
+    <wsdl:part name="retryCount" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="OdysseyTxnExecutionRollbackWithRetryHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="OdysseyTxnExecutionWithRetryAllowFaultsHttpGetIn">
+    <wsdl:part name="odysseyTransactionXML" type="s:string" />
+    <wsdl:part name="siteKey" type="s:string" />
+    <wsdl:part name="retryCount" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="OdysseyTxnExecutionWithRetryAllowFaultsHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="OdysseyTxnExecutionRollbackWithRetryAllowFaultsHttpGetIn">
+    <wsdl:part name="odysseyTransactionXML" type="s:string" />
+    <wsdl:part name="siteKey" type="s:string" />
+    <wsdl:part name="retryCount" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="OdysseyTxnExecutionRollbackWithRetryAllowFaultsHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="OdysseyMsgExecutionHttpGetIn">
+    <wsdl:part name="odysseyMessageXML" type="s:string" />
+    <wsdl:part name="siteKey" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="OdysseyMsgExecutionHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="OdysseyMsgExecutionAllowFaultsHttpGetIn">
+    <wsdl:part name="odysseyMessageXML" type="s:string" />
+    <wsdl:part name="siteKey" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="OdysseyMsgExecutionAllowFaultsHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="OdysseyTxnExecutionHttpPostIn">
+    <wsdl:part name="odysseyTransactionXML" type="s:string" />
+    <wsdl:part name="siteKey" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="OdysseyTxnExecutionHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="OdysseyTxnExecutionRollbackHttpPostIn">
+    <wsdl:part name="odysseyTransactionXML" type="s:string" />
+    <wsdl:part name="siteKey" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="OdysseyTxnExecutionRollbackHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="OdysseyTxnExecutionAllowFaultsHttpPostIn">
+    <wsdl:part name="odysseyTransactionXML" type="s:string" />
+    <wsdl:part name="siteKey" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="OdysseyTxnExecutionAllowFaultsHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="OdysseyTxnExecutionRollbackAllowFaultsHttpPostIn">
+    <wsdl:part name="odysseyTransactionXML" type="s:string" />
+    <wsdl:part name="siteKey" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="OdysseyTxnExecutionRollbackAllowFaultsHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="OdysseyTxnExecutionWithRetryHttpPostIn">
+    <wsdl:part name="odysseyTransactionXML" type="s:string" />
+    <wsdl:part name="siteKey" type="s:string" />
+    <wsdl:part name="retryCount" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="OdysseyTxnExecutionWithRetryHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="OdysseyTxnExecutionRollbackWithRetryHttpPostIn">
+    <wsdl:part name="odysseyTransactionXML" type="s:string" />
+    <wsdl:part name="siteKey" type="s:string" />
+    <wsdl:part name="retryCount" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="OdysseyTxnExecutionRollbackWithRetryHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="OdysseyTxnExecutionWithRetryAllowFaultsHttpPostIn">
+    <wsdl:part name="odysseyTransactionXML" type="s:string" />
+    <wsdl:part name="siteKey" type="s:string" />
+    <wsdl:part name="retryCount" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="OdysseyTxnExecutionWithRetryAllowFaultsHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="OdysseyTxnExecutionRollbackWithRetryAllowFaultsHttpPostIn">
+    <wsdl:part name="odysseyTransactionXML" type="s:string" />
+    <wsdl:part name="siteKey" type="s:string" />
+    <wsdl:part name="retryCount" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="OdysseyTxnExecutionRollbackWithRetryAllowFaultsHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="OdysseyMsgExecutionHttpPostIn">
+    <wsdl:part name="odysseyMessageXML" type="s:string" />
+    <wsdl:part name="siteKey" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="OdysseyMsgExecutionHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="OdysseyMsgExecutionAllowFaultsHttpPostIn">
+    <wsdl:part name="odysseyMessageXML" type="s:string" />
+    <wsdl:part name="siteKey" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="OdysseyMsgExecutionAllowFaultsHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:portType name="APIWebServiceSoap">
+    <wsdl:operation name="OdysseyTxnExecution">
+      <wsdl:input message="tns:OdysseyTxnExecutionSoapIn" />
+      <wsdl:output message="tns:OdysseyTxnExecutionSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="OdysseyTxnExecutionRollback">
+      <wsdl:input message="tns:OdysseyTxnExecutionRollbackSoapIn" />
+      <wsdl:output message="tns:OdysseyTxnExecutionRollbackSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="OdysseyTxnExecutionAllowFaults">
+      <wsdl:input message="tns:OdysseyTxnExecutionAllowFaultsSoapIn" />
+      <wsdl:output message="tns:OdysseyTxnExecutionAllowFaultsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="OdysseyTxnExecutionRollbackAllowFaults">
+      <wsdl:input message="tns:OdysseyTxnExecutionRollbackAllowFaultsSoapIn" />
+      <wsdl:output message="tns:OdysseyTxnExecutionRollbackAllowFaultsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="OdysseyTxnExecutionWithRetry">
+      <wsdl:input message="tns:OdysseyTxnExecutionWithRetrySoapIn" />
+      <wsdl:output message="tns:OdysseyTxnExecutionWithRetrySoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="OdysseyTxnExecutionRollbackWithRetry">
+      <wsdl:input message="tns:OdysseyTxnExecutionRollbackWithRetrySoapIn" />
+      <wsdl:output message="tns:OdysseyTxnExecutionRollbackWithRetrySoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="OdysseyTxnExecutionWithRetryAllowFaults">
+      <wsdl:input message="tns:OdysseyTxnExecutionWithRetryAllowFaultsSoapIn" />
+      <wsdl:output message="tns:OdysseyTxnExecutionWithRetryAllowFaultsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="OdysseyTxnExecutionRollbackWithRetryAllowFaults">
+      <wsdl:input message="tns:OdysseyTxnExecutionRollbackWithRetryAllowFaultsSoapIn" />
+      <wsdl:output message="tns:OdysseyTxnExecutionRollbackWithRetryAllowFaultsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="OdysseyMsgExecution">
+      <wsdl:input message="tns:OdysseyMsgExecutionSoapIn" />
+      <wsdl:output message="tns:OdysseyMsgExecutionSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="OdysseyMsgExecutionAllowFaults">
+      <wsdl:input message="tns:OdysseyMsgExecutionAllowFaultsSoapIn" />
+      <wsdl:output message="tns:OdysseyMsgExecutionAllowFaultsSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="APIWebServiceHttpGet">
+    <wsdl:operation name="OdysseyTxnExecution">
+      <wsdl:input message="tns:OdysseyTxnExecutionHttpGetIn" />
+      <wsdl:output message="tns:OdysseyTxnExecutionHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="OdysseyTxnExecutionRollback">
+      <wsdl:input message="tns:OdysseyTxnExecutionRollbackHttpGetIn" />
+      <wsdl:output message="tns:OdysseyTxnExecutionRollbackHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="OdysseyTxnExecutionAllowFaults">
+      <wsdl:input message="tns:OdysseyTxnExecutionAllowFaultsHttpGetIn" />
+      <wsdl:output message="tns:OdysseyTxnExecutionAllowFaultsHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="OdysseyTxnExecutionRollbackAllowFaults">
+      <wsdl:input message="tns:OdysseyTxnExecutionRollbackAllowFaultsHttpGetIn" />
+      <wsdl:output message="tns:OdysseyTxnExecutionRollbackAllowFaultsHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="OdysseyTxnExecutionWithRetry">
+      <wsdl:input message="tns:OdysseyTxnExecutionWithRetryHttpGetIn" />
+      <wsdl:output message="tns:OdysseyTxnExecutionWithRetryHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="OdysseyTxnExecutionRollbackWithRetry">
+      <wsdl:input message="tns:OdysseyTxnExecutionRollbackWithRetryHttpGetIn" />
+      <wsdl:output message="tns:OdysseyTxnExecutionRollbackWithRetryHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="OdysseyTxnExecutionWithRetryAllowFaults">
+      <wsdl:input message="tns:OdysseyTxnExecutionWithRetryAllowFaultsHttpGetIn" />
+      <wsdl:output message="tns:OdysseyTxnExecutionWithRetryAllowFaultsHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="OdysseyTxnExecutionRollbackWithRetryAllowFaults">
+      <wsdl:input message="tns:OdysseyTxnExecutionRollbackWithRetryAllowFaultsHttpGetIn" />
+      <wsdl:output message="tns:OdysseyTxnExecutionRollbackWithRetryAllowFaultsHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="OdysseyMsgExecution">
+      <wsdl:input message="tns:OdysseyMsgExecutionHttpGetIn" />
+      <wsdl:output message="tns:OdysseyMsgExecutionHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="OdysseyMsgExecutionAllowFaults">
+      <wsdl:input message="tns:OdysseyMsgExecutionAllowFaultsHttpGetIn" />
+      <wsdl:output message="tns:OdysseyMsgExecutionAllowFaultsHttpGetOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="APIWebServiceHttpPost">
+    <wsdl:operation name="OdysseyTxnExecution">
+      <wsdl:input message="tns:OdysseyTxnExecutionHttpPostIn" />
+      <wsdl:output message="tns:OdysseyTxnExecutionHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="OdysseyTxnExecutionRollback">
+      <wsdl:input message="tns:OdysseyTxnExecutionRollbackHttpPostIn" />
+      <wsdl:output message="tns:OdysseyTxnExecutionRollbackHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="OdysseyTxnExecutionAllowFaults">
+      <wsdl:input message="tns:OdysseyTxnExecutionAllowFaultsHttpPostIn" />
+      <wsdl:output message="tns:OdysseyTxnExecutionAllowFaultsHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="OdysseyTxnExecutionRollbackAllowFaults">
+      <wsdl:input message="tns:OdysseyTxnExecutionRollbackAllowFaultsHttpPostIn" />
+      <wsdl:output message="tns:OdysseyTxnExecutionRollbackAllowFaultsHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="OdysseyTxnExecutionWithRetry">
+      <wsdl:input message="tns:OdysseyTxnExecutionWithRetryHttpPostIn" />
+      <wsdl:output message="tns:OdysseyTxnExecutionWithRetryHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="OdysseyTxnExecutionRollbackWithRetry">
+      <wsdl:input message="tns:OdysseyTxnExecutionRollbackWithRetryHttpPostIn" />
+      <wsdl:output message="tns:OdysseyTxnExecutionRollbackWithRetryHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="OdysseyTxnExecutionWithRetryAllowFaults">
+      <wsdl:input message="tns:OdysseyTxnExecutionWithRetryAllowFaultsHttpPostIn" />
+      <wsdl:output message="tns:OdysseyTxnExecutionWithRetryAllowFaultsHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="OdysseyTxnExecutionRollbackWithRetryAllowFaults">
+      <wsdl:input message="tns:OdysseyTxnExecutionRollbackWithRetryAllowFaultsHttpPostIn" />
+      <wsdl:output message="tns:OdysseyTxnExecutionRollbackWithRetryAllowFaultsHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="OdysseyMsgExecution">
+      <wsdl:input message="tns:OdysseyMsgExecutionHttpPostIn" />
+      <wsdl:output message="tns:OdysseyMsgExecutionHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="OdysseyMsgExecutionAllowFaults">
+      <wsdl:input message="tns:OdysseyMsgExecutionAllowFaultsHttpPostIn" />
+      <wsdl:output message="tns:OdysseyMsgExecutionAllowFaultsHttpPostOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="APIWebServiceSoap" type="tns:APIWebServiceSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="OdysseyTxnExecution">
+      <soap:operation soapAction="http://www.tylertech.com/OdysseyTxnExecution" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="OdysseyTxnExecutionRollback">
+      <soap:operation soapAction="http://www.tylertech.com/OdysseyTxnExecutionRollback" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="OdysseyTxnExecutionAllowFaults">
+      <soap:operation soapAction="http://www.tylertech.com/OdysseyTxnExecutionAllowFaults" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="OdysseyTxnExecutionRollbackAllowFaults">
+      <soap:operation soapAction="http://www.tylertech.com/OdysseyTxnExecutionRollbackAllowFaults" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="OdysseyTxnExecutionWithRetry">
+      <soap:operation soapAction="http://www.tylertech.com/OdysseyTxnExecutionWithRetry" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="OdysseyTxnExecutionRollbackWithRetry">
+      <soap:operation soapAction="http://www.tylertech.com/OdysseyTxnExecutionRollbackWithRetry" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="OdysseyTxnExecutionWithRetryAllowFaults">
+      <soap:operation soapAction="http://www.tylertech.com/OdysseyTxnExecutionWithRetryAllowFaults" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="OdysseyTxnExecutionRollbackWithRetryAllowFaults">
+      <soap:operation soapAction="http://www.tylertech.com/OdysseyTxnExecutionRollbackWithRetryAllowFaults" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="OdysseyMsgExecution">
+      <soap:operation soapAction="http://www.tylertech.com/OdysseyMsgExecution" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="OdysseyMsgExecutionAllowFaults">
+      <soap:operation soapAction="http://www.tylertech.com/OdysseyMsgExecutionAllowFaults" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="APIWebServiceSoap12" type="tns:APIWebServiceSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="OdysseyTxnExecution">
+      <soap12:operation soapAction="http://www.tylertech.com/OdysseyTxnExecution" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="OdysseyTxnExecutionRollback">
+      <soap12:operation soapAction="http://www.tylertech.com/OdysseyTxnExecutionRollback" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="OdysseyTxnExecutionAllowFaults">
+      <soap12:operation soapAction="http://www.tylertech.com/OdysseyTxnExecutionAllowFaults" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="OdysseyTxnExecutionRollbackAllowFaults">
+      <soap12:operation soapAction="http://www.tylertech.com/OdysseyTxnExecutionRollbackAllowFaults" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="OdysseyTxnExecutionWithRetry">
+      <soap12:operation soapAction="http://www.tylertech.com/OdysseyTxnExecutionWithRetry" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="OdysseyTxnExecutionRollbackWithRetry">
+      <soap12:operation soapAction="http://www.tylertech.com/OdysseyTxnExecutionRollbackWithRetry" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="OdysseyTxnExecutionWithRetryAllowFaults">
+      <soap12:operation soapAction="http://www.tylertech.com/OdysseyTxnExecutionWithRetryAllowFaults" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="OdysseyTxnExecutionRollbackWithRetryAllowFaults">
+      <soap12:operation soapAction="http://www.tylertech.com/OdysseyTxnExecutionRollbackWithRetryAllowFaults" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="OdysseyMsgExecution">
+      <soap12:operation soapAction="http://www.tylertech.com/OdysseyMsgExecution" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="OdysseyMsgExecutionAllowFaults">
+      <soap12:operation soapAction="http://www.tylertech.com/OdysseyMsgExecutionAllowFaults" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="APIWebServiceHttpGet" type="tns:APIWebServiceHttpGet">
+    <http:binding verb="GET" />
+    <wsdl:operation name="OdysseyTxnExecution">
+      <http:operation location="/OdysseyTxnExecution" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="OdysseyTxnExecutionRollback">
+      <http:operation location="/OdysseyTxnExecutionRollback" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="OdysseyTxnExecutionAllowFaults">
+      <http:operation location="/OdysseyTxnExecutionAllowFaults" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="OdysseyTxnExecutionRollbackAllowFaults">
+      <http:operation location="/OdysseyTxnExecutionRollbackAllowFaults" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="OdysseyTxnExecutionWithRetry">
+      <http:operation location="/OdysseyTxnExecutionWithRetry" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="OdysseyTxnExecutionRollbackWithRetry">
+      <http:operation location="/OdysseyTxnExecutionRollbackWithRetry" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="OdysseyTxnExecutionWithRetryAllowFaults">
+      <http:operation location="/OdysseyTxnExecutionWithRetryAllowFaults" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="OdysseyTxnExecutionRollbackWithRetryAllowFaults">
+      <http:operation location="/OdysseyTxnExecutionRollbackWithRetryAllowFaults" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="OdysseyMsgExecution">
+      <http:operation location="/OdysseyMsgExecution" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="OdysseyMsgExecutionAllowFaults">
+      <http:operation location="/OdysseyMsgExecutionAllowFaults" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="APIWebServiceHttpPost" type="tns:APIWebServiceHttpPost">
+    <http:binding verb="POST" />
+    <wsdl:operation name="OdysseyTxnExecution">
+      <http:operation location="/OdysseyTxnExecution" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="OdysseyTxnExecutionRollback">
+      <http:operation location="/OdysseyTxnExecutionRollback" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="OdysseyTxnExecutionAllowFaults">
+      <http:operation location="/OdysseyTxnExecutionAllowFaults" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="OdysseyTxnExecutionRollbackAllowFaults">
+      <http:operation location="/OdysseyTxnExecutionRollbackAllowFaults" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="OdysseyTxnExecutionWithRetry">
+      <http:operation location="/OdysseyTxnExecutionWithRetry" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="OdysseyTxnExecutionRollbackWithRetry">
+      <http:operation location="/OdysseyTxnExecutionRollbackWithRetry" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="OdysseyTxnExecutionWithRetryAllowFaults">
+      <http:operation location="/OdysseyTxnExecutionWithRetryAllowFaults" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="OdysseyTxnExecutionRollbackWithRetryAllowFaults">
+      <http:operation location="/OdysseyTxnExecutionRollbackWithRetryAllowFaults" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="OdysseyMsgExecution">
+      <http:operation location="/OdysseyMsgExecution" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="OdysseyMsgExecutionAllowFaults">
+      <http:operation location="/OdysseyMsgExecutionAllowFaults" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="APIWebService">
+    <wsdl:port name="APIWebServiceSoap" binding="tns:APIWebServiceSoap">
+      <soap:address location="http://admmsta006.lacourt.org/webservices/apiwebservice.asmx" />
+    </wsdl:port>
+    <wsdl:port name="APIWebServiceSoap12" binding="tns:APIWebServiceSoap12">
+      <soap12:address location="http://admmsta006.lacourt.org/webservices/apiwebservice.asmx" />
+    </wsdl:port>
+    <wsdl:port name="APIWebServiceHttpGet" binding="tns:APIWebServiceHttpGet">
+      <http:address location="http://admmsta006.lacourt.org/webservices/apiwebservice.asmx" />
+    </wsdl:port>
+    <wsdl:port name="APIWebServiceHttpPost" binding="tns:APIWebServiceHttpPost">
+      <http:address location="http://admmsta006.lacourt.org/webservices/apiwebservice.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
